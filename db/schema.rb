@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170629151616) do
+=======
+
+ActiveRecord::Schema.define(version: 20170629143728) do
+>>>>>>> f8b31529d91ddf3a4174210b5c96968a4f0df31b
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +41,16 @@ ActiveRecord::Schema.define(version: 20170629151616) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+  end
+
+  create_table "portfolios", force: :cascade do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.text     "body"
+    t.text     "main_image"
+    t.text     "thumb_image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "portfolios", force: :cascade do |t|
